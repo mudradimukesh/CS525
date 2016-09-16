@@ -1,0 +1,27 @@
+swapnil@swapnil:~/tmp/CS525/Assignment-1$ ls
+dberror.h  README.md      storage_mgr.h     test_helper.h
+Plan.txt   storage_mgr.c  test_assign1_1.c
+swapnil@swapnil:~/tmp/CS525/Assignment-1$ gcc storage_mgr.c test_assign1_1.c
+swapnil@swapnil:~/tmp/CS525/Assignment-1$ ls
+a.out      Plan.txt   storage_mgr.c  test_assign1_1.c
+dberror.h  README.md  storage_mgr.h  test_helper.h
+swapnil@swapnil:~/tmp/CS525/Assignment-1$ ./a.out
+
+****** Storage Manager Initialised ****** 
+
+In createPageFile Function
+Total Pages =1
+
+End createPageFile Function
+In openPageFile Function
+Total Pages =1
+End openPageFile Function
+**** File Handler Info ****
+File handler->file name = test_file.txt
+File fHandle->totalNumPages =1
+File fHandle->curPagePos =0
+ File is Good
+In closePageFile Function
+End closePageFile Function
+In destroyPageFile Function
+End destroyPageFile Functionswapnil@swapnil:~/tmp/CS525/Assignment-1$ 
