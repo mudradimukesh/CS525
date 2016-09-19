@@ -3,17 +3,20 @@
 
 #include "stdio.h"
 
-/* module wide constants */
-#define PAGE_SIZE 2048
 
-/* return code definitions */
-typedef int RC;
+#define PAGE_SIZE 1024
+#define FILE_HEADER 128
+
 
 #define RC_OK 0
-#define RC_FILE_NOT_FOUND -1
+#define RC_FILE_NOT_FOUND 1
+#define RC_READ_NON_EXISTING_PAGE 2
+#define RC_WRITE_FAILED 3
 
-/*For printing a Eror Message  */
-extern void printError_Msg (RC error);
-extern char *error_Msg (RC error);
+typedef int RC;
+extern char *RC_message; 
+
+extern void printError(RC error);
+
 
 #endif
