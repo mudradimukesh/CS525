@@ -1,2 +1,6 @@
-swapnil@swapnil:~/tmp/CS525/Assignment-1$ gcc storage_mgr.c test_assign1_1.c
+swapnil@swapnil:~/tmp/CS525/Assignment-1$ gcc storage_mgr.c dberror.c test_assign1_1.c
 swapnil@swapnil:~/tmp/CS525/Assignment-1$ ./a.out
+
+// For checking memory leaks
+valgrind -v --leak-check=full --show-leak-kinds=all ./a.out 
+
