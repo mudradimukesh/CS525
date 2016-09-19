@@ -14,9 +14,9 @@
 #define RC_WRITE_FAILED 3
 
 typedef int RC;
-extern char *RC_message; 
+extern char RC_message[]; 
 
-extern void printError(RC error);
+extern void printError(RC error, char *message);
 
 
 #endif

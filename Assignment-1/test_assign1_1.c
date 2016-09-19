@@ -10,7 +10,7 @@
 
 #define file_name "test_file.txt"
 
-#define TOTAL_TEST_CASES 6
+#define TOTAL_TEST_CASES 7
 
 /* prototype functions */
 
@@ -104,9 +104,16 @@ int main(void)
               
      case 6: 
               /*---------------------------------------------------------------------*/
-              printf("\n------------- < Running Test Case :%d Writing on non-existing Page Block> ----------------\n",Test_Case);
+               printf("\n------------- < Running Test Case :%d Writing on non-existing Page Block> ----------------\n",Test_Case);
                TEST_RC(writeBlock (3, &File_ph, Mem_ph_pointer));
                break;
+               
+     case 7:
+               /*---------------------------------------------------------------------*/
+               printf("\n------------- < Running Test Case :%d Add this case test> ----------------\n",Test_Case);
+              
+               break;
+       
     default :
         printf("\n------------- < All Test Cases Ran Successfully > ----------------\n");
                break;

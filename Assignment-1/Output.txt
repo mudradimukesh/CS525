@@ -1,28 +1,3 @@
-swapnil@swapnil:~/Documents/Assignments/ADO1/Working$ gcc storage_mgr.c dberror.c test_assign1_1.c
-In file included from test_assign1_1.c:9:0:
-test_helper.h:15:26: warning: backslash and newline separated by space
- #define TEST_RC(RC_Code) \     
-                          ^
-test_helper.h:16:11: warning: backslash and newline separated by space
-   do {    \            
-           ^
-test_helper.h:17:29: warning: backslash and newline separated by space
-        if(RC_Code != RC_OK) \     
-                             ^
-test_helper.h:18:14: warning: backslash and newline separated by space
-       {      \    
-              ^
-test_helper.h:19:118: warning: backslash and newline separated by space
- _Number:L%i,<----RC_Status : %d [Error] ---->\n",FUNCT_INFO,RC_Code); \        
-                                                                       ^
-test_helper.h:23:122: warning: backslash and newline separated by space
- %s  Line_Number:L%i,<----RC_Status : %d [OK] ---->\n",FUNCT_INFO,RC_Code); \   
-                                                                            ^
-test_helper.h:24:10: warning: backslash and newline separated by space
-       }  \     
-          ^
-swapnil@swapnil:~/Documents/Assignments/ADO1/Working$ ./a.out
-
 ------------- < Running Test Cases > ----------------
 
 ------------- < Running Test Case :1 Intialise Storage Manager > ----------------
@@ -31,11 +6,7 @@ swapnil@swapnil:~/Documents/Assignments/ADO1/Working$ ./a.out
 
 ------------- < Running Test Case :2 Open Page > ----------------
 
-RC_Code:(0)
-
 Function_Name:main  File_Name:test_assign1_1.c  Line_Number:L47,<----RC_Status : 0 [OK] ---->
-
-RC_Code:(0)
 
 Function_Name:main  File_Name:test_assign1_1.c  Line_Number:L48,<----RC_Status : 0 [OK] ---->
 
@@ -55,9 +26,6 @@ File fHandle->curPagePos =1
 ------------- < Running Test Case :3 Write Block> ----------------
 
 page no = 1-> flip pointer shift =128
-page no = 1-> flip pointer shift =128
-RC_Code:(0)
-
 page no = 1-> flip pointer shift =128
 Function_Name:main  File_Name:test_assign1_1.c  Line_Number:L65,<----RC_Status : 0 [OK] ---->
 
@@ -93,9 +61,6 @@ SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
 
 page no = 2-> flip pointer shift =1152
 page no = 2-> flip pointer shift =1152
-RC_Code:(0)
-
-page no = 2-> flip pointer shift =1152
 Function_Name:main  File_Name:test_assign1_1.c  Line_Number:L95,<----RC_Status : 0 [OK] ---->
 
 -----------------< File Handler Info >-------------------
@@ -113,7 +78,13 @@ SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
 
 ------------- < Running Test Case :6 Writing on non-existing Page Block> ----------------
 
+Last System Check : Success
 Not valid Page
+Last System Check : Success
+Not valid Page
+Error_Occured -------> Error_Number: (3) Error_Message: RC_WRITE_FAILED in writeBlock function
+
+Last System Check : Success
 Not valid Page
 Function_Name:main  File_Name:test_assign1_1.c  Line_Number:L108,<----RC_Status : 3 [Error] ---->
 
@@ -130,6 +101,20 @@ SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
 ----------------------> < File Size =2176  > <-------------
 -----------------------------------------------------------------
 
+------------- < Running Test Case :7 Add this case test> ----------------
+
+-----------------< File Handler Info >-------------------
+
+File handler->file name = test_file.txt
+File fHandle->totalNumPages =2
+File fHandle->curPagePos =2
+  ------------------------ < Read File > ---------------------------  
+
+------------------------Testing File Content------------------------
+2
+SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+----------------------> < File Size =2176  > <-------------
+-----------------------------------------------------------------
+
 ------------- < Working Fine > ----------------
-swapnil@swapnil:~/Documents/Assignments/ADO1/Working$ 
 
